@@ -1,0 +1,31 @@
+.pac-container {
+  background-color: #fff;
+  z-index: 9999;
+  position: fixed;
+  display: inline-block;
+  float: left;
+}
+.limited-text {
+  max-width: 300px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.limited-text-small {
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  @media (width <= 500px) {
+    max-width: 100px;
+  }
+}
+.limited-text-100 {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.display-linebreak {
+  white-space: pre-line;
+}

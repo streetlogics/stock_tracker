@@ -1,0 +1,22 @@
+{
+  "name": "rogue-events",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "dotenv-cli": "^7.1.0",
+    "ts-node": "^10.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "wait-on": "^8.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "concurrently \"TZ=UTC dotenv -e .env.local yarn workspace back-end start\" \"TZ=UTC dotenv -e .env.local yarn workspace front-end start\"",
+    "kill": "sudo lsof -i :4001 -t | xargs kill -9",
+    "migrate": "yarn workspace back-end run migrate-run",
+    "generate-migrations": "yarn workspace back-end run migrate-generate"
+  }
+}
